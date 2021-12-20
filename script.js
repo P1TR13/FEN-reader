@@ -1,5 +1,18 @@
+var info = document.getElementById('info');
+var infoDialog = document.getElementById('infoDialog');
+
+info.addEventListener('click', function onOpen() {
+  if (typeof infoDialog.showModal === "function") {
+    infoDialog.showModal();
+  } else {
+    alert("The <dialog> API is not supported by this browser");
+  }
+});
+
 let board = document.querySelector("#board")
+let last = document.querySelector("#last")
 let fen
+let newFEN
 
 let chessPieces = ["♔", "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟"]
 
@@ -145,6 +158,13 @@ function fenReader() {
                 i++
                 piece = chessPieces[11]
                 break
+            default:
+                alert("That's not a FEN")
+                for (i = 1; i <= 8; i++) {
+                    for (j = 1; j <= 8; j++) {
+                        document.getElementById("p" + i + j).textContent = "";
+                    }
+                }
         }
 
         let currentSquare = document.querySelector("#p" + j + i)
@@ -154,6 +174,11 @@ function fenReader() {
         }
 
         fenNumber++
+        newFEN += char
+
+        if (i === 8 && j === 8) {
+            return
+        }
     }
 }
 
@@ -173,7 +198,10 @@ function enterFEN() {
                 }
             }
 
+            newFEN = ""
             fenReader()
+
+            last.innerHTML = "Last FEN: " + newFEN
         }
     })
 }
