@@ -45,5 +45,18 @@ function createBoard() {
     }
 }
 
+function enterFEN() {
+    var input = document.getElementById("input");
+    input.addEventListener("keyup", function(event) {
+        console.log(event)
+        if (event.key === "Enter") {
+            event.preventDefault()
+   
+            alert(input.value)
+        }
+    })
+}
+
 createBoard()
 gettingBoxes()
+enterFEN()

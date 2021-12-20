@@ -21,6 +21,14 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+#text:hover {
+    cursor: default;
+}
+
+#text p:hover {
+    cursor: pointer;
+}
+
 
 #board {
     width: 560px;
@@ -56,7 +64,7 @@ body {
 
 .white:hover {
     cursor: pointer;
-    background-color:  #eeeed2c9;
+    background-color:  #dadabc;
 }
 
 input {
