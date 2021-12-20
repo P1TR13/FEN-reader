@@ -26,5 +26,5 @@ Project is created with:
 #### Info about FEN
 ![Info about FEN](./img/dialog.png)
 
-#### The result
-![The result](./img/final.png)
+#### The final result
+![The final result](./img/final.png)
