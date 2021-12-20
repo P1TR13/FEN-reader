@@ -1,4 +1,5 @@
 let board = document.querySelector("#board")
+let fen
 
 let chessPieces = ["♔", "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟"]
 
@@ -47,13 +48,132 @@ function createBoard() {
     }
 }
 
+function fenReader() {
+    let i = 0
+    let j = 1
+    let fenNumber = 0
+    let char
+    let piece
+    
+
+    while (fenNumber < `${fen.length}`) {
+        char = fen[fenNumber]
+
+        switch (char) {
+            case '/':
+                j++
+                i = 0
+                piece = ''
+                break
+            case '1':
+                i += 1
+                piece = ''
+                break
+            case '2':
+                i += 2
+                piece = ''
+                break
+            case '3':
+                i += 3
+                piece = ''
+                break
+            case '4':
+                i += 4
+                piece = ''
+                break
+            case '5':
+                i += 5
+                piece = ''
+                break
+            case '6':
+                i += 6
+                piece = ''
+                break
+            case '7':
+                i += 7
+                piece = ''
+                break
+            case '8':
+                i += 8
+                piece = ''
+                break
+            case 'K':
+                i++
+                piece = chessPieces[0]
+                break
+            case 'Q':
+                i++
+                piece = chessPieces[1]
+                break
+            case 'R':
+                i++
+                piece = chessPieces[2]
+                break
+            case 'B':
+                i++
+                piece = chessPieces[3]
+                break
+            case 'N':
+                i++
+                piece = chessPieces[4]
+                break
+            case 'P':
+                i++
+                piece = chessPieces[5]
+                break
+            case 'k':
+                i++
+                piece = chessPieces[6]
+                break
+            case 'q':
+                i++
+                piece = chessPieces[7]
+                break
+            case 'r':
+                i++
+                piece = chessPieces[8]
+                break
+            case 'b':
+                i++
+                piece = chessPieces[9]
+                break
+            case 'n':
+                i++
+                piece = chessPieces[10]
+                break
+            case 'p':
+                i++
+                piece = chessPieces[11]
+                break
+        }
+
+        let currentSquare = document.querySelector("#p" + j + i)
+
+        if (char !== '/') {
+            currentSquare.innerHTML += piece
+        }
+
+        fenNumber++
+    }
+}
+
 function enterFEN() {
     var input = document.getElementById("input");
     input.addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             event.preventDefault()
    
-            alert(input.value)
+            fen = input.value
+
+            input.value = ""
+
+            for (i = 1; i <= 8; i++) {
+                for (j = 1; j <= 8; j++) {
+                    document.getElementById("p" + i + j).textContent = "";
+                }
+            }
+
+            fenReader()
         }
     })
 }
