@@ -69,6 +69,15 @@ body {
 
 input {
     margin-top: 25px;
-    width: 560px;
-    height: 20px;
+    width: 550px;
+    height: 30px;
+    background-color: #dadabc;
+    border: none;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input:focus {
+    outline: none;
 }

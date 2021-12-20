@@ -1,5 +1,7 @@
 let board = document.querySelector("#board")
 
+let chessPieces = ["♔", "♕", "♖", "♗", "♘", "♙", "♚", "♛", "♜", "♝", "♞", "♟"]
+
 let boxes = [['1','1','1','1','1','1','1','1','1','1'],
             ['1','0','0','0','0','0','0','0','0','1'],
             ['1','0','0','0','0','0','0','0','0','1'],
@@ -48,7 +50,6 @@ function createBoard() {
 function enterFEN() {
     var input = document.getElementById("input");
     input.addEventListener("keyup", function(event) {
-        console.log(event)
         if (event.key === "Enter") {
             event.preventDefault()
    
