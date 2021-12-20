@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    background-color: #eeeed2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+
+#text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+#board {
+    width: 560px;
+    height: 560px;
+    display: grid;
+    grid-template-columns: 70px 70px 70px 70px 70px 70px 70px 70px;
+    grid-template-rows: 70px 70px 70px 70px 70px 70px 70px 70px;
+    justify-content: center;
+    border: 5px solid #769656;
+}
+
+.square {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.black {
+    background-color:  #769656;
+}
+
+.black:hover {
+    cursor: pointer;
+    background-color:  #769656c9;
+}
+
+.white {
+    background-color: #eeeed2;
+    z-index: 5;
+}
+
+.white:hover {
+    cursor: pointer;
+    background-color:  #eeeed2c9;
+}
+
+input {
+    margin-top: 25px;
+    width: 560px;
+    height: 20px;
+}
